@@ -16,6 +16,6 @@ print(f"Your bank account uid is: {class_object.account_id}")
 "\n"
 while True:
     choice = user_choice = input("Enter which operation you wanna do a: deposit, b: withdraw, c: check bank balance,  d: show transaction history ")
-    class_object.bank(choice)
+    class_object.bank(choice)   
 
     
