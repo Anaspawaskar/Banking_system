@@ -1,24 +1,36 @@
-from Account import Account
-from Banking_server import Banking_server
-import time 
+"""main file where every thing
+"""
+import time
+from banking_server import BankingServer
+
 
 print("Welcome To The Banking System")
 time.sleep(3)
-1200
+
 print("Please Create Your Account First ")
 time.sleep(1)
 
-class_object = Banking_server(name=input("Enter your name: "), _initial_deposit=float(input("Enter your initial deposit: ")))
+class_object = BankingServer(
+    name=input("Enter your name: "),
+    initial_deposit=float(input("Enter your initial deposit: ")),
+)
 print("Your Account Has Been Created ")
 
 print(f"Your bank account uid is: {class_object.account_id}")
 
-"\n"
+
 while True:
-    choice = user_choice = input("Enter which operation you wanna do  (1: Deposit, 2: Withdraw, 3: Check Bank Balance,  4: Show Transaction History , 5: Create a New Account           6:Exit the banking system ) :")
-    class_object.bank(choice)   
+    dirc = {
+        1: "deposit",
+        2: "Withdraw",
+        3: "check_bank_balance",
+        4: "show transaction history",
+        5: "create a new account",
+        6: "to check the new account number",
+    }
+    choice = user_choice = input(dirc)
+
+    class_object.bank(choice)
     if choice == "6":
-         print("Thanks for visiting the Banking System Have a nice day ")
-         break
-    
-    
+        print("Thanks for visiting the Banking System Have a nice day ")
+        break
